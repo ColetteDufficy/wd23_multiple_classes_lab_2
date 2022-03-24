@@ -25,17 +25,23 @@ class TestBear(unittest.TestCase):
 
         
     def test_bear_take_fish_from_river(self):
-        fish2 = Fish("Cod")
-        fish3 = Fish("Pollock")
-        river = River("Amazon")
-        
-        river.add_fish_to_river(fish2)
-        river.add_fish_to_river(fish3)
-        
-        river.remove_fish_from_river(fish2)
-        self.bear1.add_fish_to_stomach(fish2)
-
+        # # the following 6 lines werent needed!!!! not sure if i hard coded it?????? The result is just the block above
+                # fish2 = Fish("Cod")
+                # fish3 = Fish("Pollock") 
+                # river = River("Amazon")
+                
+                # river.add_fish_to_river(fish2)
+                # river.add_fish_to_river(fish3)
+                
+                # river.remove_fish_from_river(fish2)
+        self.bear1.add_fish_to_stomach(self.fish1)
         self.assertEqual(1, len(self.bear1.stomach))
+        
+        
+    def test_bear_can_roar(self):
+        self.bear1.bear_roar()
+        self.assertEqual("rooooar", self.bear1.bear_roar())
+        
 
             
         

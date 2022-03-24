@@ -9,3 +9,5 @@ class River:
     def remove_fish_from_river(self, fish):
         self.fish_stock.remove(fish)
 
+    def fish_count(self):
+        return len(self.fish_stock)
