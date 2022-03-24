@@ -24,14 +24,17 @@ class TestBear(unittest.TestCase):
         self.assertEqual(1, len(self.bear1.stomach))
 
         
-    def test_bear_take_fish_from_river(self, river):
+    def test_bear_take_fish_from_river(self):
         fish2 = Fish("Cod")
         fish3 = Fish("Pollock")
+        river = River("Amazon")
+        
         river.add_fish_to_river(fish2)
         river.add_fish_to_river(fish3)
         
+        river.remove_fish_from_river(fish2)
         self.bear1.add_fish_to_stomach(fish2)
-        self.bear1.remove_fish_from_river(river)
+
         self.assertEqual(1, len(self.bear1.stomach))
 
             
